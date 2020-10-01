@@ -1,0 +1,646 @@
+{
+	"info": {
+		"_postman_id": "3573bb7d-fc3b-4a20-9042-8bb5088f4252",
+		"name": "Buses",
+		"description": "Contenedor de solicutudes a los Endpoint realizados en el proyecto Buses, se encuentran categorizados de la siguiente manera:\r\n* Bus (6)\r\n* Concessionaire (5)\r\n* DeviceType (5)\r\n* Device (5)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bus",
+			"item": [
+				{
+					"name": "Crear Bus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Gas\",\r\n    \"motor\": \"Nuclear\",\r\n    \"brakes\": \"Disco\",\r\n    \"concessionaireComando\": {\r\n                                \"id\": 102,\r\n                                \"name\": \"Concessionaire 102\"\r\n                            }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/bus/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bus",
+								"crear"
+							]
+						},
+						"description": "Solicutid PUT en la cual se envian los datos del objeto a crear en formato JSON"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar bus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/bus/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bus",
+								"all"
+							]
+						},
+						"description": "Solicitud GET que retorna un listado de todos los buses registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Bus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/bus/borrar/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bus",
+								"borrar",
+								"3"
+							]
+						},
+						"description": "Solicitud DELETE que realiza el borrado de un Bus enviando por la URL el Id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Bus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"motor\": \"Atomico\",\r\n    \"brakes\": \"Automatico\",\r\n    \"type\": \"Solar\",\r\n    \"concessionaireid\": {\r\n        \"id\": 102,\r\n        \"name\": \"Concessionaire 102\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/bus/actualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bus",
+								"actualizar"
+							]
+						},
+						"description": "Solicitud POST que actualiza los datos de un Bus enviando en formato JSON los datos del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorId Bus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/concessionaire/102",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"concessionaire",
+								"102"
+							]
+						},
+						"description": "Solicitud GET que retorna los datos de un bus tomando como entrada por URL el id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "Devices Bus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/bus/busDevice/100",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bus",
+								"busDevice",
+								"100"
+							]
+						},
+						"description": "Solicitud GET que retorna un listado de los Devices asociados a un Bus en formato JSON"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints asociados a la entidad Bus",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e9f057c1-3e7e-4e1e-b116-8797f35498fc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "53dd105e-5d4e-419d-be10-1de299deb75e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Concessionaire",
+			"item": [
+				{
+					"name": "Crear Concessionaire",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Concessionaire 9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/concessionaire/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"concessionaire",
+								"crear"
+							]
+						},
+						"description": "Solicutid PUT en la cual se envian los datos del objeto a crear en formato JSON"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Concessionaire",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/concessionaire/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"concessionaire",
+								"all"
+							]
+						},
+						"description": "Solicitud GET que retorna un listado de todos los concessionaire registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Concessionaire",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/concessionaire/borrar/17",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"concessionaire",
+								"borrar",
+								"17"
+							]
+						},
+						"description": "Solicitud DELETE que realiza el borrado de un Concessionaire enviando por la URL el Id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorId Concessionaire",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/concessionaire/9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"concessionaire",
+								"9"
+							]
+						},
+						"description": "Solicitud GET que retorna los datos de un concessionaire tomando como entrada por URL el id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Concessionaire",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 102,\r\n    \"name\": \"Concessionaire 102 Actualizado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/concessionaire/actualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"concessionaire",
+								"actualizar"
+							]
+						},
+						"description": "Solicitud POST que actualiza los datos de un Concessionaire enviando en formato JSON los datos del mismo"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints asociados a la entidad Concessionaire",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ac3cfb22-48a9-4c82-8f17-c3be26c200d3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7e0d7fac-3ef4-438e-81e2-fab67835752b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "DeviceType",
+			"item": [
+				{
+					"name": "Crear DeviceType",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"DeviceType 8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/deviceType/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deviceType",
+								"crear"
+							]
+						},
+						"description": "Solicutid PUT en la cual se envian los datos del objeto a crear en formato JSON"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar DeviceType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/deviceType/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deviceType",
+								"all"
+							]
+						},
+						"description": "Solicitud GET que retorna un listado de todos los deviceType registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar DeviceType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/deviceType/borrar/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deviceType",
+								"borrar",
+								"6"
+							]
+						},
+						"description": "Solicitud DELETE que realiza el borrado de un DeviceType enviando por la URL el Id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorId DeviceType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/deviceType/8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deviceType",
+								"8"
+							]
+						},
+						"description": "Solicitud GET que retorna los datos de un deviceType tomando como entrada por URL el id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar DeviceType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"name\": \"DeviceType 7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/deviceType/actualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deviceType",
+								"actualizar"
+							]
+						},
+						"description": "Solicitud POST que actualiza los datos de un DeviceType enviando en formato JSON los datos del mismo"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints asociados a la entidad DeviceType",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "88f4c3d8-5fae-4d66-81bf-810b07d0909a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0eb7d06-ce4e-402d-b61d-0a70b3666baf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "Crear Device",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ip\": \"1.1.1.1\",\r\n    \"deviceTypeComando\": {\r\n        \"id\": 100,\r\n        \"name\": \"Glass\"\r\n    },\r\n    \"status\": \"Inactive\",\r\n    \"bus\": {\r\n        \"id\": 21,\r\n        \"motor\": \"test\",\r\n        \"brakes\": \"test\",\r\n        \"type\": \"test\",\r\n        \"concessionaireid\": {\r\n            \"id\": 100,\r\n            \"name\": \"Concessionaire 100 Actualizado\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/device/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"device",
+								"crear"
+							]
+						},
+						"description": "Solicutid PUT en la cual se envian los datos del objeto a crear en formato JSON"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/device/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"device",
+								"all"
+							]
+						},
+						"description": "Solicitud GET que retorna un listado de todos los device registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Device",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/device/borrar/100",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"device",
+								"borrar",
+								"100"
+							]
+						},
+						"description": "Solicitud DELETE que realiza el borrado de un Device enviando por la URL el Id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorId Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/device/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"device",
+								"10"
+							]
+						},
+						"description": "Solicitud GET que retorna los datos de un device tomando como entrada por URL el id del mismo"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 10,\r\n    \"ip\": \"10.10.10.10\",\r\n    \"deviceTypeComando\": {\r\n        \"id\": 8,\r\n        \"name\": \"DeviceType 8\"\r\n    },\r\n    \"status\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/device/actualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"device",
+								"actualizar"
+							]
+						},
+						"description": "Solicitud POST que actualiza los datos de un Device enviando en formato JSON los datos del mismo"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints asociados a la entidad Device",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6fc65aa2-378c-4c38-9117-e1fd7782acbb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c63ddf3-a9c6-481c-b30f-cab082514e3c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3d27e1fd-80d9-430e-8f93-9e3695ddf256",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "54f5914a-2877-4553-9e17-504d6dcb898a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

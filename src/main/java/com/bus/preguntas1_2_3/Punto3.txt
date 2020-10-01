@@ -1,0 +1,21 @@
+//Sentencias SQL asociadas al punto 3 de la prueba
+//Given the entity relationship diagram below, code SQL sentences for:
+
+//Get all buses for “Concessionaire 1”.
+SELECT *
+	FROM Bus
+		INNER JOIN Concessionaire ON Bus.concessionaireId = Concessionaire.id
+	WHERE Concessionaire.name = 'Concessionaire 1'
+
+//Get all NVR devices for buses with type equal to “Bi-articulado”.
+SELECT *
+	FROM Device
+		INNER JOIN Bus ON Device.busId = Bus.id
+		INNER JOIN DeviceType ON Device.deviceTypeId = deviceType.id 
+	WHERE deviceType.name = 'NVR' AND Bus.type = 'Bi-articulado'
+
+//Summarize the quantity of devices by status (Active / Inactive) and bus motor.
+SELECT Device.id, Device.status, Bus.motor, count(Device.id)
+	FROM Bus
+		INNER JOIN Device ON Device.busId = Bus.id 
+	GROUP BY Device.id, Device.status, Bus.motor
